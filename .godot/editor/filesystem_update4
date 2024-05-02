@@ -1,0 +1,7 @@
+res://grid_movement/pawns/Pivot.cs
+res://game.tscn
+res://theme/theme.tres
+res://decoration/wind_sway.tres
+res://grid_movement/exploration.tscn
+res://grid_movement/pawns/character.tscn
+res://grid_movement/pawns/PlayerQT.cs

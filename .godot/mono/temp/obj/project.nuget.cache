@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "9wrTvWlZMWHdgCYq5/7sIngv0pn9CxdzYm8OhBI9f4R5qo7/MYRiu8UxJeIZqMoGT2AlLziWfIi7kF0SO2q1oA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Christa\\Documents\\Game-Dev\\RPGQT\\JRPG Demo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Christa\\.nuget\\packages\\godot.sourcegenerators\\4.2.2\\godot.sourcegenerators.4.2.2.nupkg.sha512",
+    "C:\\Users\\Christa\\.nuget\\packages\\godotsharp\\4.2.2\\godotsharp.4.2.2.nupkg.sha512",
+    "C:\\Users\\Christa\\.nuget\\packages\\godotsharpeditor\\4.2.2\\godotsharpeditor.4.2.2.nupkg.sha512",
+    "C:\\Users\\Christa\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\Christa\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\Christa\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

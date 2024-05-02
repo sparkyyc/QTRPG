@@ -1,0 +1,17 @@
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\bin\Debug\JRPG Demo.deps.json
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\bin\Debug\JRPG Demo.runtimeconfig.json
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\bin\Debug\JRPG Demo.dll
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\bin\Debug\JRPG Demo.pdb
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.csproj.AssemblyReference.cache
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.AssemblyInfoInputs.cache
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.AssemblyInfo.cs
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.csproj.CoreCompileInputs.cache
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.csproj.Up2Date
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.dll
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\refint\JRPG Demo.dll
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.pdb
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.genruntimeconfig.cache
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\ref\JRPG Demo.dll
