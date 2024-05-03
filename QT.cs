@@ -3,18 +3,6 @@ using Godot;
 
 namespace Quadtree
 {
-    struct Point
-    {
-        public int x;
-        public int y;
-
-        public Point(int _x, int _y)
-        {
-            x = _x;
-            y = _y;
-        }
-    }
-
     struct NodeQT
     {
         public Vector2 pos;

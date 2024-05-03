@@ -657,8 +657,8 @@ script = ExtResource("6")
 combat_actor = ExtResource("7")
 
 [node name="Slime" parent="Grid/Opponent/Pivot" index="0"]
-position = Vector2(0, -4.4406)
-scale = Vector2(0.9072, 1.1392)
+position = Vector2(0, -0.633704)
+scale = Vector2(0.986757, 1.01986)
 texture = ExtResource("14")
 
 [node name="Sprite2D" parent="Grid/Opponent/Pivot" index="1"]
@@ -683,8 +683,8 @@ combat_actor = ExtResource("7")
 metadata/_edit_group_ = true
 
 [node name="Slime" parent="Grid/Opponent2/Pivot" index="0"]
-position = Vector2(0, -2.91994)
-scale = Vector2(0.938978, 1.09153)
+position = Vector2(0, -0.633704)
+scale = Vector2(0.986757, 1.01986)
 texture = ExtResource("14")
 
 [node name="Sprite2D" parent="Grid/Opponent2/Pivot" index="1"]
@@ -709,8 +709,8 @@ combat_actor = ExtResource("7")
 metadata/_edit_group_ = true
 
 [node name="Slime" parent="Grid/Opponent3/Pivot" index="0"]
-position = Vector2(0, -4.39759)
-scale = Vector2(0.908098, 1.13785)
+position = Vector2(0, -0.633704)
+scale = Vector2(0.986757, 1.01986)
 texture = ExtResource("14")
 
 [node name="Sprite2D" parent="Grid/Opponent3/Pivot" index="1"]
