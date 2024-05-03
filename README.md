@@ -58,7 +58,7 @@ See more about quadtrees and spatial partitioning here:
 Please refer to QT.cs and PlayerQT.cs for my personal code.
 
 ### Visual Walkthrough
-[![Walkthrough](https://img.youtube.com/vi/d_pKo_JX2Hc/0.jpg)(https://youtu.be/d_pKo_JX2Hc)
+[![Walkthrough](https://img.youtube.com/vi/d_pKo_JX2Hc/0.jpg)](https://youtu.be/d_pKo_JX2Hc)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
