@@ -39,8 +39,8 @@ namespace Quadtree
         private Quad bottomLeftTree;
         private Quad bottomRightTree;
 
-        public int Children = 4;
-        public int Capacity = 4;
+        private int Children = 4;
+        private int Capacity = 4;
 
         public Quad()
         {
@@ -264,23 +264,4 @@ namespace Quadtree
             );
         }
     }
-
-    // class Program
-    // {
-    //     static void Main()
-    //     {
-    //         Quad center = new Quad(new Point(0, 0), new Point(8, 8));
-    //         Node a = new Node(new Point(1, 1), 1);
-    //         Node b = new Node(new Point(2, 5), 2);
-    //         Node c = new Node(new Point(7, 6), 3);
-    //         center.Insert(a);
-    //         center.Insert(b);
-    //         center.Insert(c);
-
-    //         Console.WriteLine("Node a: " + center.Search(new Point(1, 1)).data);
-    //         Console.WriteLine("Node b: " + center.Search(new Point(2, 5)).data);
-    //         Console.WriteLine("Node c: " + center.Search(new Point(7, 6)).data);
-    //         Console.WriteLine("Non-existing node: " + center.Search(new Point(5, 5)).data);
-    //     }
-    // }
 }

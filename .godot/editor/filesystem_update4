@@ -1,13 +1,11 @@
 res://grid_movement/pawns/Pivot.cs
+res://grid_movement/PlayerQT.cs
 res://game.tscn
 res://theme/theme.tres
 res://decoration/wind_sway.tres
+res://grid_movement/grid/tiles/grid_tileset.tres
 res://grid_movement/exploration.tscn
 res://grid_movement/pawns/character.tscn
-res://grid_movement/pawns/PlayerQT.cs
-res://grid_movement/PlayerQT.cs
 res://combat/combatants/combatant.tscn
 res://combat/combatants/opponent.tscn
 res://combat/combatants/player.tscn
-res://combat/combat.tscn
-res://grid_movement/grid/tiles/grid_tileset.tres

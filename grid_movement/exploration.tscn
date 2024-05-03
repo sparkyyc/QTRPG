@@ -650,15 +650,15 @@ texture = ExtResource("15_upljw")
 [node name="PlayerQT" type="Node2D" parent="Grid/Player"]
 script = ExtResource("16_u44km")
 
-[node name="Opponent" parent="Grid" instance=ExtResource("4")]
+[node name="Opponent" parent="Grid" groups=["Enemy"] instance=ExtResource("4")]
 visible = false
 position = Vector2(800, 480)
 script = ExtResource("6")
 combat_actor = ExtResource("7")
 
 [node name="Slime" parent="Grid/Opponent/Pivot" index="0"]
-position = Vector2(0, 4.19519)
-scale = Vector2(1.10644, 0.869166)
+position = Vector2(0, -4.4406)
+scale = Vector2(0.9072, 1.1392)
 texture = ExtResource("14")
 
 [node name="Sprite2D" parent="Grid/Opponent/Pivot" index="1"]
@@ -672,6 +672,58 @@ one_shot = true
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Grid/Opponent"]
+visible = false
+texture = ExtResource("14")
+
+[node name="Opponent2" parent="Grid" groups=["Enemy"] instance=ExtResource("4")]
+visible = false
+position = Vector2(1121, 94)
+script = ExtResource("6")
+combat_actor = ExtResource("7")
+metadata/_edit_group_ = true
+
+[node name="Slime" parent="Grid/Opponent2/Pivot" index="0"]
+position = Vector2(0, -2.91994)
+scale = Vector2(0.938978, 1.09153)
+texture = ExtResource("14")
+
+[node name="Sprite2D" parent="Grid/Opponent2/Pivot" index="1"]
+visible = true
+
+[node name="DialoguePlayer" parent="Grid/Opponent2" instance=ExtResource("8")]
+dialogue_file = "res://dialogue/dialogue_data/npc.json"
+
+[node name="Timer" type="Timer" parent="Grid/Opponent2"]
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Grid/Opponent2"]
+visible = false
+texture = ExtResource("14")
+
+[node name="Opponent3" parent="Grid" groups=["Enemy"] instance=ExtResource("4")]
+visible = false
+position = Vector2(1123, 410)
+script = ExtResource("6")
+combat_actor = ExtResource("7")
+metadata/_edit_group_ = true
+
+[node name="Slime" parent="Grid/Opponent3/Pivot" index="0"]
+position = Vector2(0, -4.39759)
+scale = Vector2(0.908098, 1.13785)
+texture = ExtResource("14")
+
+[node name="Sprite2D" parent="Grid/Opponent3/Pivot" index="1"]
+visible = true
+
+[node name="DialoguePlayer" parent="Grid/Opponent3" instance=ExtResource("8")]
+dialogue_file = "res://dialogue/dialogue_data/npc.json"
+
+[node name="Timer" type="Timer" parent="Grid/Opponent3"]
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Grid/Opponent3"]
 visible = false
 texture = ExtResource("14")
 
@@ -1912,3 +1964,5 @@ visible = false
 color = Color(0.223103, 0.223103, 0.223103, 1)
 
 [editable path="Grid/Opponent"]
+[editable path="Grid/Opponent2"]
+[editable path="Grid/Opponent3"]
