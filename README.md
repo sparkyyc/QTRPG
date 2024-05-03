@@ -29,7 +29,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Quadtree RPG
 
-[Quadtree RPG](./readme-assets/Game-Screenshot.png)
+![Quadtree RPG](./readme-assets/Game-Screenshot.png)
 
 Building off a Godot official RPG Demo, I used a quadtree data structure to implement a simple search and reveal positional system. This takes the form of a yellow slime you control, that as you move him forward, utilizes this quadtree to search the immediate area to find enemy slimes and reveals them.
 
