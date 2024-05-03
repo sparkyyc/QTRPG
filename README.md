@@ -20,7 +20,6 @@
 	  </ul>
 	</li>
 	<li><a href="#usage">Usage</a></li>
-	<li><a href="#contributing">Contributing</a></li>
 	<li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -28,7 +27,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About The Quadtree RPG
 
 [![Quadtree RPG](./readme-assets/Game-Screenshot.png)]
 
@@ -36,13 +35,28 @@ Building off a Godot official RPG Demo, I used a quadtree data structure to impl
 
 The goal of this was to do a from scratch implmentation of an effecient way to locate objects via organizing and storing them by their positions.
 
+### What is a Quadtree
+You can think about a quadtree visually, which goes well with my usecase for a quadtree using positional data. 
+A quadtree can be a representation of space divided into 4 rectangles or quadrants, each of those quadrants can cotain 4 children or contain another reactangle with 4 quadrants itself. This is an effecient way to store the spatial position of data, based on what quadrant they are in.
+
+For example, we have a bunch of positional points and we want to query if some point _p_ is range. We _could_ compare every point in space to _p_, the brute force method that would take a long time.
+Or we could use the quadtree, which find the correct quadrant using time effecient recursive methods, by finding each of the ancestor quadrants until the correct quadrant is found and the children can check if the point is a child of the quadrant (found) or deemed not in range. 
+
+
 Why use a quadtree:
 * A quadtree can take in spatial positioning data and offers good performance for insertion, removal and lookup. 
 * In a game, spatial data is constantly changing, you need fast performing structures to handle the retreival and processes of this data.
-* Tha alternative would be a brute force approach of checking all intersections. 
+* Tha alternative would be a brute force approach of checking all intersections.
+* Great for sparse data sets. 
+
+See more about quadtrees and spatial partitioning here:
+[Quadtrees](https://en.wikipedia.org/wiki/Quadtree)
+[Spatial Partition - Game Programming Patterns](https://gameprogrammingpatterns.com/spatial-partition.html)
+
+Please refer to QT.cs and PlayerQT.cs for my personal code.
 
 ### Visual Walkthrough
-
+![Walkthrough](https://youtu.be/d_pKo_JX2Hc)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

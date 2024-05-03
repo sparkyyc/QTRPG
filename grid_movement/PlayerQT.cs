@@ -14,9 +14,7 @@ public partial class PlayerQT : Node2D
     public override void _Ready()
     {
         _rootQuadTree = new Quad(new Vector2(0, 0), new Vector2(1280, 720));
-        // Node2D enemyBody = GetNode<Node2D>("/root/Game/Exploration/Grid/Opponent");
         _bodies = GetTree().GetNodesInGroup("Enemy").Cast<Node2D>().ToList();
-        // _bodies.Add(enemyBody);
         foreach (Node2D body in _bodies)
         {
             _rootQuadTree.Insert(new NodeQT(body.Position));
