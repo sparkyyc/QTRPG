@@ -15,3 +15,4 @@ C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\refint\JRPG
 C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.pdb
 C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.genruntimeconfig.cache
 C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\ref\JRPG Demo.dll
+C:\Users\Christa\Documents\Game-Dev\RPGQT\.godot\mono\temp\obj\Debug\JRPG Demo.sourcelink.json

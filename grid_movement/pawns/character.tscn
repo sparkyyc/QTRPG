@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bdni5iw2j108j"]
+[gd_scene load_steps=21 format=3 uid="uid://bdni5iw2j108j"]
 
 [ext_resource type="Script" path="res://grid_movement/pawns/walker.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ba5rklp7brg7" path="res://grid_movement/pawns/character.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://c7n37h1euodch" path="res://grid_movement/pawns/player_exploration.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://c5mr2yqxvctld" path="res://grid_movement/pawns/player_exploration_bump.png" id="4"]
 [ext_resource type="Script" path="res://grid_movement/pawns/Pivot.cs" id="4_laetm"]
-[ext_resource type="Script" path="res://grid_movement/pawns/PlayerQT.cs" id="6_vgylh"]
 
 [sub_resource type="Animation" id="3"]
 length = 0.001
@@ -222,7 +221,7 @@ states/idle/position = Vector2(139, 36)
 states/walk/node = SubResource("10")
 states/walk/position = Vector2(310, 116)
 transitions = ["walk", "idle", SubResource("11"), "bump", "idle", SubResource("12"), "idle", "walk", SubResource("13"), "idle", "bump", SubResource("14"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_ed7tp"), "idle", "End", SubResource("AnimationNodeStateMachineTransition_j3wgi")]
-graph_offset = Vector2(-609, -158)
+graph_offset = Vector2(-609, 44.2295)
 
 [node name="Character" type="Node2D"]
 z_index = 1
@@ -238,8 +237,8 @@ libraries = {
 script = ExtResource("4_laetm")
 
 [node name="Slime" type="Sprite2D" parent="Pivot"]
-position = Vector2(0, 3.18288)
-scale = Vector2(1.0831, 0.900821)
+position = Vector2(0, -3.40377)
+scale = Vector2(0.928867, 1.1067)
 texture = ExtResource("3")
 centered = false
 offset = Vector2(-32, -32)
@@ -255,6 +254,3 @@ offset = Vector2(-32, -32)
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("5")
 anim_player = NodePath("../AnimationPlayer")
-
-[node name="PlayerQT" type="Node2D" parent="."]
-script = ExtResource("6_vgylh")

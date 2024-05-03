@@ -1,228 +1,286 @@
-using Godot;
 using System;
+using Godot;
 
-
-namespace Quadtree{
-
-
-struct Point
+namespace Quadtree
 {
-    public int x;
-    public int y;
-
-    public Point(int _x, int _y)
+    struct Point
     {
-        x = _x;
-        y = _y;
-    }
-}
+        public int x;
+        public int y;
 
-struct NodeQT
-
-{
-    public Vector2 pos;
-    public int data;
-
-    public NodeQT
-    (Vector2 _pos)
-    {
-        pos = _pos;
-        data = 1;
-    }
-}
-
-class Quad
-{
-    private Vector2 topLeft;
-    private Vector2 bottomRight;
-
-    private NodeQT
-     n;
-
-    private Quad topLeftTree;
-    private Quad topRightTree;
-    private Quad bottomLeftTree;
-    private Quad bottomRightTree;
-
-    public int Children = 4;
-    public int Capacity = 4;
-
-    public Quad()
-    {
-        topLeft = new Vector2(0, 0);
-        bottomRight = new Vector2(0, 0);
-        n = new NodeQT
-        ();
-        topLeftTree = null;
-        topRightTree = null;
-        bottomLeftTree = null;
-        bottomRightTree = null;
-    }
-
-    public Quad(Vector2 _topLeft, Vector2 _bottomRight)
-    {
-        topLeft = _topLeft;
-        bottomRight = _bottomRight;
-        n = new NodeQT
-        ();
-        topLeftTree = null;
-        topRightTree = null;
-        bottomLeftTree = null;
-        bottomRightTree = null;
-    }
-
-    public void Insert(NodeQT
-     node)
-    {
-        if (node.Equals(default(NodeQT)))
+        public Point(int _x, int _y)
         {
-            return;
+            x = _x;
+            y = _y;
+        }
+    }
+
+    struct NodeQT
+    {
+        public Vector2 pos;
+        public int data;
+
+        public NodeQT(Vector2 _pos)
+        {
+            pos = _pos;
+            data = 1;
+        }
+    }
+
+    class Quad
+    {
+        private Vector2 topLeft;
+        private Vector2 bottomRight;
+
+        private NodeQT n;
+
+        private Quad topLeftTree;
+        private Quad topRightTree;
+        private Quad bottomLeftTree;
+        private Quad bottomRightTree;
+
+        public int Children = 4;
+        public int Capacity = 4;
+
+        public Quad()
+        {
+            topLeft = new Vector2(0, 0);
+            bottomRight = new Vector2(0, 0);
+            n = new NodeQT();
+            topLeftTree = null;
+            topRightTree = null;
+            bottomLeftTree = null;
+            bottomRightTree = null;
         }
 
-        if (!InBoundary(node.pos))
+        public Quad(Vector2 _topLeft, Vector2 _bottomRight)
         {
-            return;
+            topLeft = _topLeft;
+            bottomRight = _bottomRight;
+            n = new NodeQT();
+            topLeftTree = null;
+            topRightTree = null;
+            bottomLeftTree = null;
+            bottomRightTree = null;
         }
 
-        if (Math.Abs(topLeft.X - bottomRight.X) <= 1 && Math.Abs(topLeft.Y - bottomRight.Y) <= 1)
+        public void Insert(NodeQT node)
         {
-            if (n.Equals(default(NodeQT)))
+            if (node.Equals(default(NodeQT)))
             {
-                n = node;
+                return;
             }
-            return;
-        }
 
-        if ((topLeft.X + bottomRight.X) / 2 >= node.pos.X)
-        {
-            if ((topLeft.Y + bottomRight.Y) / 2 >= node.pos.Y)
+            if (!InBoundary(node.pos))
             {
-                if (topLeftTree == null)
+                return;
+            }
+
+            if (
+                Math.Abs(topLeft.X - bottomRight.X) <= 1
+                && Math.Abs(topLeft.Y - bottomRight.Y) <= 1
+            )
+            {
+                if (n.Equals(default(NodeQT)))
                 {
-                    topLeftTree = new Quad(
-                        new Vector2(topLeft.X, topLeft.Y),
-                        new Vector2((topLeft.X + bottomRight.X) / 2, (topLeft.Y + bottomRight.Y) / 2)
-                    );
+                    n = node;
                 }
-                topLeftTree.Insert(node);
+                return;
+            }
+
+            if ((topLeft.X + bottomRight.X) / 2 >= node.pos.X)
+            {
+                if ((topLeft.Y + bottomRight.Y) / 2 >= node.pos.Y)
+                {
+                    if (topLeftTree == null)
+                    {
+                        topLeftTree = new Quad(
+                            new Vector2(topLeft.X, topLeft.Y),
+                            new Vector2(
+                                (topLeft.X + bottomRight.X) / 2,
+                                (topLeft.Y + bottomRight.Y) / 2
+                            )
+                        );
+                    }
+                    topLeftTree.Insert(node);
+                }
+                else
+                {
+                    if (bottomLeftTree == null)
+                    {
+                        bottomLeftTree = new Quad(
+                            new Vector2(topLeft.X, (topLeft.Y + bottomRight.Y) / 2),
+                            new Vector2((topLeft.X + bottomRight.X) / 2, bottomRight.Y)
+                        );
+                    }
+                    bottomLeftTree.Insert(node);
+                }
             }
             else
             {
-                if (bottomLeftTree == null)
+                if ((topLeft.Y + bottomRight.Y) / 2 >= node.pos.Y)
                 {
-                    bottomLeftTree = new Quad(
-                        new Vector2(topLeft.X, (topLeft.Y + bottomRight.Y) / 2),
-                        new Vector2((topLeft.X + bottomRight.X) / 2, bottomRight.Y)
-                    );
+                    if (topRightTree == null)
+                    {
+                        topRightTree = new Quad(
+                            new Vector2((topLeft.X + bottomRight.X) / 2, topLeft.Y),
+                            new Vector2(bottomRight.X, (topLeft.Y + bottomRight.Y) / 2)
+                        );
+                    }
+                    topRightTree.Insert(node);
                 }
-                bottomLeftTree.Insert(node);
+                else
+                {
+                    if (bottomRightTree == null)
+                    {
+                        bottomRightTree = new Quad(
+                            new Vector2(
+                                (topLeft.X + bottomRight.X) / 2,
+                                (topLeft.Y + bottomRight.Y) / 2
+                            ),
+                            new Vector2(bottomRight.X, bottomRight.Y)
+                        );
+                    }
+                    bottomRightTree.Insert(node);
+                }
             }
         }
-        else
+
+        public NodeQT Search(Vector2 p)
         {
-            if ((topLeft.Y + bottomRight.Y) / 2 >= node.pos.Y)
+            if (!InBoundary(p))
             {
-                if (topRightTree == null)
+                return default;
+            }
+
+            if (!n.Equals(default(NodeQT)))
+            {
+                return n;
+            }
+
+            if ((topLeft.X + bottomRight.X) / 2 >= p.X)
+            {
+                if ((topLeft.Y + bottomRight.Y) / 2 >= p.Y)
                 {
-                    topRightTree = new Quad(
-                        new Vector2((topLeft.X + bottomRight.X) / 2, topLeft.Y),
-                        new Vector2(bottomRight.X, (topLeft.Y + bottomRight.Y) / 2)
-                    );
+                    if (topLeftTree == null)
+                    {
+                        return default(NodeQT);
+                    }
+                    return topLeftTree.Search(p);
                 }
-                topRightTree.Insert(node);
+                else
+                {
+                    if (bottomLeftTree == null)
+                    {
+                        return default(NodeQT);
+                    }
+                    return bottomLeftTree.Search(p);
+                }
             }
             else
             {
-                if (bottomRightTree == null)
+                if ((topLeft.Y + bottomRight.Y) / 2 >= p.Y)
                 {
-                    bottomRightTree = new Quad(
-                        new Vector2((topLeft.X + bottomRight.X) / 2, (topLeft.Y + bottomRight.Y) / 2),
-                        new Vector2(bottomRight.X, bottomRight.Y)
-                    );
+                    if (topRightTree == null)
+                    {
+                        return default(NodeQT);
+                    }
+                    return topRightTree.Search(p);
                 }
-                bottomRightTree.Insert(node);
+                else
+                {
+                    if (bottomRightTree == null)
+                    {
+                        return default(NodeQT);
+                    }
+                    return bottomRightTree.Search(p);
+                }
             }
         }
-    }
 
-    public NodeQT Search(Vector2 p)
-    {
-        if (!InBoundary(p))
-        {
-            return default;
-        }
+        public NodeQT SearchRange(Vector2 p, Rect2 range){
 
-        if (!n.Equals(default(NodeQT)))
-        {
-            return n;
-        }
-
-        if ((topLeft.X + bottomRight.X) / 2 >= p.X)
-        {
-            if ((topLeft.Y + bottomRight.Y) / 2 >= p.Y)
+            if (!InRange(p, range))
             {
-                if (topLeftTree == null)
+                return default;
+            }
+
+            if (!n.Equals(default(NodeQT)))
+            {
+                return n;
+            }
+
+           if ((topLeft.X + bottomRight.X) / 2 >= p.X)
+            {
+                if ((topLeft.Y + bottomRight.Y) / 2 >= p.Y)
                 {
-                    return default(NodeQT);
+                    if (topLeftTree == null)
+                    {
+                        return default(NodeQT);
+                    }
+                    return topLeftTree.Search(p);
                 }
-                return topLeftTree.Search(p);
+                else
+                {
+                    if (bottomLeftTree == null)
+                    {
+                        return default(NodeQT);
+                    }
+                    return bottomLeftTree.Search(p);
+                }
             }
             else
             {
-                if (bottomLeftTree == null)
+                if ((topLeft.Y + bottomRight.Y) / 2 >= p.Y)
                 {
-                    return default(NodeQT);
+                    if (topRightTree == null)
+                    {
+                        return default(NodeQT);
+                    }
+                    return topRightTree.Search(p);
                 }
-                return bottomLeftTree.Search(p);
+                else
+                {
+                    if (bottomRightTree == null)
+                    {
+                        return default(NodeQT);
+                    }
+                    return bottomRightTree.Search(p);
+                }
             }
         }
-        else
+
+        private bool InBoundary(Vector2 p)
         {
-            if ((topLeft.Y + bottomRight.Y) / 2 >= p.Y)
-            {
-                if (topRightTree == null)
-                {
-                    return default(NodeQT);
-                }
-                return topRightTree.Search(p);
-            }
-            else
-            {
-                if (bottomRightTree == null)
-                {
-                    return default(NodeQT);
-                }
-                return bottomRightTree.Search(p);
-            }
+            return (
+                p.X >= topLeft.X && p.X <= bottomRight.X && p.Y >= topLeft.Y && p.Y <= bottomRight.Y
+            );
+        }
+
+        private bool InRange(Vector2 p, Rect2 range)
+        {
+            return (
+                p.X >= range.Position.X && p.X <= range.End.X && p.Y >= range.Position.Y && p.Y <= range.End.Y
+            );
         }
     }
-    
 
-    private bool InBoundary(Vector2 p)
-    {
-        return (
-            p.X >= topLeft.X && p.X <= bottomRight.X && p.Y >= topLeft.Y && p.Y <= bottomRight.Y
-        );
-    }
-}
+    // class Program
+    // {
+    //     static void Main()
+    //     {
+    //         Quad center = new Quad(new Point(0, 0), new Point(8, 8));
+    //         Node a = new Node(new Point(1, 1), 1);
+    //         Node b = new Node(new Point(2, 5), 2);
+    //         Node c = new Node(new Point(7, 6), 3);
+    //         center.Insert(a);
+    //         center.Insert(b);
+    //         center.Insert(c);
 
-// class Program
-// {
-//     static void Main()
-//     {
-//         Quad center = new Quad(new Point(0, 0), new Point(8, 8));
-//         Node a = new Node(new Point(1, 1), 1);
-//         Node b = new Node(new Point(2, 5), 2);
-//         Node c = new Node(new Point(7, 6), 3);
-//         center.Insert(a);
-//         center.Insert(b);
-//         center.Insert(c);
-
-//         Console.WriteLine("Node a: " + center.Search(new Point(1, 1)).data);
-//         Console.WriteLine("Node b: " + center.Search(new Point(2, 5)).data);
-//         Console.WriteLine("Node c: " + center.Search(new Point(7, 6)).data);
-//         Console.WriteLine("Non-existing node: " + center.Search(new Point(5, 5)).data);
-//     }
-// }
-
+    //         Console.WriteLine("Node a: " + center.Search(new Point(1, 1)).data);
+    //         Console.WriteLine("Node b: " + center.Search(new Point(2, 5)).data);
+    //         Console.WriteLine("Node c: " + center.Search(new Point(7, 6)).data);
+    //         Console.WriteLine("Non-existing node: " + center.Search(new Point(5, 5)).data);
+    //     }
+    // }
 }
